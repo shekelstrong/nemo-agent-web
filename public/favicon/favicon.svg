@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A84FF" />
+      <stop offset="50%" stop-color="#AF52DE" />
+      <stop offset="100%" stop-color="#64D2FF" />
+    </linearGradient>
+    <linearGradient id="orbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A84FF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#AF52DE" stop-opacity="0.6" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer ring with pulse -->
+  <circle cx="32" cy="32" r="30" stroke="url(#logoGrad)" stroke-width="1.5" opacity="0.3">
+    <animate attributeName="r" values="30;32;30" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- N letter integrated with neural node -->
+  <path d="M14 18 L14 46 L19 46 L19 28 L29 46 L34 46 L34 18 L29 18 L29 36 L19 18 Z"
+        fill="url(#logoGrad)" filter="url(#glow)" />
+
+  <!-- Neural network nodes -->
+  <circle cx="44" cy="22" r="2.5" fill="#0A84FF">
+    <animate attributeName="r" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="50" cy="32" r="2.5" fill="#AF52DE">
+    <animate attributeName="r" values="2.5;3.5;2.5" dur="2s" begin="0.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="44" cy="42" r="2.5" fill="#64D2FF">
+    <animate attributeName="r" values="2.5;3.5;2.5" dur="2s" begin="1s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Neural connections -->
+  <line x1="44" y1="22" x2="50" y2="32" stroke="#0A84FF" stroke-width="0.8" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+  </line>
+  <line x1="50" y1="32" x2="44" y2="42" stroke="#AF52DE" stroke-width="0.8" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="0.7s" repeatCount="indefinite" />
+  </line>
+  <line x1="44" y1="22" x2="44" y2="42" stroke="#64D2FF" stroke-width="0.8" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="1.3s" repeatCount="indefinite" />
+  </line>
+</svg>

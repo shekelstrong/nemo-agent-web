@@ -1,0 +1,244 @@
+/* ============================================
+   iOS 27 Hero Styles
+   ============================================ */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 96px;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.hero-orb {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-orb svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 80px rgba(10, 132, 255, 0.3));
+}
+
+.hero-title {
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 24px 0 40px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: rgba(10, 132, 255, 0.15);
+  border: 1px solid rgba(10, 132, 255, 0.3);
+  font-size: 13px;
+  font-weight: 600;
+  color: #0A84FF;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34C759;
+  box-shadow: 0 0 12px #34C759;
+  animation: glow-pulse 2s ease infinite;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 64px;
+  flex-wrap: wrap;
+}
+
+.hero-stat-value {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.hero-stat-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Floating preview cards */
+.hero-preview {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-chat-mock {
+  background: rgba(11, 14, 20, 0.6);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 24px;
+  max-width: 480px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+}
+
+.hero-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 16px;
+}
+
+.hero-chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.hero-chat-status {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-chat-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+}
+
+.hero-chat-online {
+  font-size: 12px;
+  color: #34C759;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero-chat-online::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34C759;
+}
+
+.hero-chat-message {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  animation: fade-in-up 0.5s var(--ease-smooth) backwards;
+}
+
+.hero-chat-message.user {
+  flex-direction: row-reverse;
+}
+
+.hero-chat-bubble {
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 80%;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.hero-chat-bubble.user {
+  background: #0A84FF;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.hero-chat-bubble.bot {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border-bottom-left-radius: 4px;
+}
+
+.hero-chat-typing {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.hero-chat-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  animation: typing-bounce 1.4s ease-in-out infinite;
+}
+
+.hero-chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+.hero-chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+  .hero-orb {
+    width: 400px;
+    height: 400px;
+    opacity: 0.5;
+  }
+  .hero-section {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-orb {
+    display: none;
+  }
+  .hero-stats {
+    gap: 24px;
+  }
+  .hero-stat-value {
+    font-size: 28px;
+  }
+}
